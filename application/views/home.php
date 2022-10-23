@@ -21,7 +21,7 @@
             <img src="<?php echo base_url('asset/gambar/2.png') ?>" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h2>Cek Pendaftaran</h2>
-                <p>Cek sekarang di website ini, apakah kamu penerima bantuan sosial</p>
+                <p>Cek sekarang di website ini, apakah kamu penerima bantuan sosiala</p>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
