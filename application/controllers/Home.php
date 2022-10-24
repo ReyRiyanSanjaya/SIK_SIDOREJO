@@ -14,6 +14,35 @@ class Home extends CI_Controller
 	public function index()
 	{
 		$this->load->view('layout/header');
+		$this->load->view('index');
+		$this->load->view('isi');
+		$this->load->view('layout/footer');
+	}
+
+	public function profil()
+	{
+		$this->load->view('layout/header');
+		$this->load->view('profil');
+		$this->load->view('layout/footer');
+	}
+
+	public function visi()
+	{
+		$this->load->view('layout/header');
+		$this->load->view('visi');
+		$this->load->view('layout/footer');
+	}
+
+	public function struktur()
+	{
+		$this->load->view('layout/header');
+		$this->load->view('struktur');
+		$this->load->view('layout/footer');
+	}
+
+	public function bansos()
+	{
+		$this->load->view('layout/header');
 		$this->load->view('home');
 		$this->load->view('isian');
 		$this->load->view('layout/footer');

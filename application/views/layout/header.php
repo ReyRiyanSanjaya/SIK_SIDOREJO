@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>BANSOS UMA</title>
+	<title>ASIK SIDOREJO	</title>
 	<link rel="stylesheet" href="<?php echo base_url('asset/bootstrap/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('asset/custom/custom.css') ?>">
 
@@ -108,7 +108,7 @@
 	<div class="header-custom fixed-top">
 		<nav class="navbar navbar-expand-lg navbar bg-light mr-5 ml-5 rounded-pill p-2" style="background-color: #fff !important; box-shadow: 0px 4px 16px rgb(0 0 0 / 10%) !important;">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="<?php echo base_url('home') ?>">SIK SIDOREJO</a>
+				<a class="navbar-brand" href="<?php echo base_url('home') ?>">ASIK SIDOREJO</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -118,7 +118,11 @@
 							<a class="nav-link active" aria-current="page" href="<?php echo base_url('home') ?>">Beranda</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="<?php echo base_url('home/tentang'); ?>">Tentang</a>
+							<a class="nav-link" href="<?php echo base_url('home/profil'); ?>">Profil</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="<?php echo base_url('home/bansos'); ?>">Cek Bansos</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="<?php echo base_url('home'); ?>#cara-daftar">Cara Daftar</a>
