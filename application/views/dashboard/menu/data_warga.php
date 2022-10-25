@@ -57,10 +57,6 @@
 				</div>
 
 			</div>
-
-			<div class="view-actions">
-				<a class='btn btn-primary' href="#modalTambahData" data-bs-toggle="modal">Tambah Data Warga</a>
-			</div>
 		</div>
 
 

@@ -6,7 +6,7 @@
 
 				<!-- Brand -->
 				<h2 class="font-serif text-white mb-1">
-					Bansos UMA
+					Bansos SIDOREJO
 				</h2>
 
 				<!-- Text -->

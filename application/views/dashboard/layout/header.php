@@ -82,7 +82,7 @@
 
 				<!-- profil pengguna  -->
 				<button class="profile-btn">
-					<img src="<?php echo base_url()?>berkas/default.jpg" />
+					<img src="<?php echo base_url()?>asset/gambar/pakde.png" />
 					<span><?= $user['nama'] ?></span>
 				</button>
 				<!-- profil pengguna  -->

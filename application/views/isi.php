@@ -1,5 +1,5 @@
- <!-- DOWNLOAD -->
- <section style="margin-top: -13% ;">
+
+ <section style="margin-top: -13% ;" class="bg-light">
  	<div class="container-lg position-relative" style="z-index: 1;">
  		<div class="row align-items-center justify-content-between">
  			<div class="col-md-5 col-lg-4 pt-10 pt-md-12">

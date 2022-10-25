@@ -63,7 +63,7 @@
 				<div class="card card-sm bg-transparent mt-5">
 
 					<!-- Image -->
-					<img class="card-img-top rounded-top-start rounded-bottom-end" src="asset/gambar/uma1.jfif" alt="...">
+					<img class="card-img-top rounded-top-start rounded-bottom-end" src="<?php echo base_url('asset/gambar/p2.png') ?>" alt="...">
 					<small>Universitas Medan Area</small>
 				</div>
 
@@ -74,7 +74,7 @@
 				<div class="card card-sm bg-transparent mt-5">
 
 					<!-- Image -->
-					<img class="card-img-top rounded-top-start rounded-bottom-end" src="asset/gambar/uma1.jfif" alt="...">
+					<img class="card-img-top rounded-top-start rounded-bottom-end" src="<?php echo base_url('asset/gambar/p2.png') ?>" alt="...">
 					<small>Universitas Medan Area</small>
 				</div>
 
@@ -85,7 +85,7 @@
 				<div class="card card-sm bg-transparent mt-5">
 
 					<!-- Image -->
-					<img class="card-img-top rounded-top-start rounded-bottom-end" src="asset/gambar/uma1.jfif" alt="...">
+					<img class="card-img-top rounded-top-start rounded-bottom-end" src="<?php echo base_url('asset/gambar/p2.png') ?>" alt="...">
 					<small>Universitas Medan Area</small>
 				</div>
 
@@ -96,7 +96,7 @@
 				<div class="card card-sm bg-transparent mt-5">
 
 					<!-- Image -->
-					<img class="card-img-top rounded-top-start rounded-bottom-end" src="asset/gambar/uma1.jfif" alt="...">
+					<img class="card-img-top rounded-top-start rounded-bottom-end" src="<?php echo base_url('asset/gambar/p2.png') ?>" alt="...">
 					<small>Universitas Medan Area</small>
 				</div>
 

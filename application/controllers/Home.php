@@ -33,6 +33,13 @@ class Home extends CI_Controller
 		$this->load->view('layout/footer');
 	}
 
+	public function peta()
+	{
+		$this->load->view('layout/header');
+		$this->load->view('peta');
+		$this->load->view('layout/footer');
+	}
+
 	public function struktur()
 	{
 		$this->load->view('layout/header');

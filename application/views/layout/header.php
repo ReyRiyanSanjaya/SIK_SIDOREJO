@@ -125,9 +125,6 @@
 							<a class="nav-link" href="<?php echo base_url('home/bansos'); ?>">Cek Bansos</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="<?php echo base_url('home'); ?>#cara-daftar">Cara Daftar</a>
-						</li>
-						<li class="nav-item">
 							<button type="button" class="btn btn-outline-primary rounded-pill" data-bs-toggle="modal" href="#modalSignIn">Login/Daftar</button>
 						</li>
 					</ul>

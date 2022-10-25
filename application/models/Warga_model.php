@@ -8,6 +8,13 @@ class Warga_model extends CI_Model
 		return $query;
 	}
 
+	public function data_penduduk()
+	{
+		$query = $this->db->get('data_penduduk')->result();
+		return $query;
+	}
+
+
 	public function tambah_data_warga($data)
 	{
 		$this->db->insert('warga', $data);

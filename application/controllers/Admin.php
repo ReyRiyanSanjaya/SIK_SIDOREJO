@@ -40,6 +40,20 @@ class Admin extends CI_Controller
 		$this->load->view('dashboard/layout/footer');
 	}
 
+	public function data_warga_all()
+	{
+		$penduduk = $this->Warga_model->data_penduduk();
+		$data_penduduk = array('data_penduduk' => $penduduk);
+
+		$data['title'] = 'Menu Data penduduk';
+		$data['user'] = $this->db->get_where('user', ['nik' => $this->session->userdata('nik')])->row_array();
+
+		$this->load->view('dashboard/layout/header', $data);
+		$this->load->view('dashboard/layout/sidebar');
+		$this->load->view('dashboard/menu/dw_all', $data_penduduk);
+		$this->load->view('dashboard/layout/footer');
+	}
+
 	public function edit_data_warga($id)
 	{
 		$queryDataWarga = $this->Warga_model->getDataWarga($id);
