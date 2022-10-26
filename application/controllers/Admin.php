@@ -98,6 +98,55 @@ class Admin extends CI_Controller
 		redirect('admin/data_warga');
 	}
 
+	public function tambah_data_penduduk()
+	{
+		$this->load->model('Penduduk_model');
+
+
+		$nik = $this->input->post('nik');
+		$nama = $this->input->post('nama');
+		$no_kk = $this->input->post('no_kk');
+		$ttl = $this->input->post('ttl');
+		$kelamin = $this->input->post('kelamin');
+		$alamat = $this->input->post('alamat');
+		$agama = $this->input->post('agama');
+		$status_nikah = $this->input->post('status_nikah');
+		$pekerjaan = $this->input->post('pekerjaan');
+		$photo = $this->input->post('photo');
+
+		// upload gambar 
+		$config['upload_path']          = './berkas/penduduk/';
+		$config['file_name']			= $nik. '.jpg';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['max_size']             = 1000;
+		$config['max_width']            = 2080;
+		$config['max_height']           = 2080;
+		$config['encrypt_name']			= FALSE;
+		$this->load->library('upload', $config);
+		
+		$upload_poto = $this->upload->do_upload('photo');
+		// upload gambar 
+
+		$data = [
+			'nik' => $nik,
+			'nama' => $nama,
+			'no_kk' => $no_kk,
+			'ttl' => $ttl,
+			'kelamin' => $kelamin,
+			'alamat' => $alamat,
+			'agama' => $agama,
+			'status_nikah' => $status_nikah,
+			'pekerjaan' => $pekerjaan,
+			'photo' => $nik. '.jpg'
+		];
+
+		$this->Penduduk_model->tambah_data_penduduk($data);
+		$this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+			Berhasil menambah Data Penduduk.
+		  </div>');
+		redirect('admin/data_warga_all');
+	}
+
 	public function edit_data()
 	{
 		$nik = $this->input->post('nik');
@@ -123,6 +172,17 @@ class Admin extends CI_Controller
 			Data berhasil dihapus.
 		  </div>');
 		redirect('admin/data_warga');
+	}
+
+	public function delete_data_penduduk($nik)
+	{
+		$this->load->model('Penduduk_model');
+		$dimana = array('nik' => $nik);
+		$this->Penduduk_model->deleteDataPenduduk($dimana, 'data_penduduk');
+		$this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+			Data berhasil dihapus.
+		  </div>');
+		redirect('admin/data_warga_all');
 	}
 
 	public function data_berkas()
