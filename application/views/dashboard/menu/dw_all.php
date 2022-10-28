@@ -229,7 +229,9 @@
 										?>
 
 											<tr>
-												<td><?php echo $row->nik ?></td>
+												<td><a href="<?php echo base_url('/admin/tampil_data_warga') ?>/<?php echo $row->nik ?>" target="_blank" rel="noopener noreferrer">
+														<?php echo $row->nik ?>p
+													</a></td>
 												<td><?php echo $row->no_kk ?></td>
 												<td><?php echo $row->nama ?></td>
 												<td><?php echo $row->ttl ?></td>
@@ -239,10 +241,10 @@
 												<td><?php echo $row->status_nikah ?></td>
 												<td><?php echo $row->pekerjaan ?></td>
 												<td class="poto"> <img class="rounded" style="width: 70px; height:70px; margin-top:-30%;" data-jarallax-element="-30" src="<?php echo base_url('berkas/penduduk/') . $row->photo ?>" alt="..."></td>
-												
+
 
 												<!-- tombol aksi  -->
-												<td> <a class='btn btn-info btn-circle' data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Ubah Data Warga" href="<?php echo base_url('/admin/edit_data_warga') ?>/<?php echo $row->nik ?>">
+												<td> <a class='btn btn-info btn-circle' data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Ubah Data Warga" href="<?php echo base_url('/admin/edit_data_penduduk') ?>/<?php echo $row->nik ?>">
 														<i class="fas fa-user-edit"></i></i>
 													</a>
 													<a class='btn btn-danger btn-circle' data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Hapus Data" href="<?php echo base_url('/admin/delete_data_penduduk') ?>/<?php echo $row->nik ?>">

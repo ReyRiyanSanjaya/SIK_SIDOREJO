@@ -58,12 +58,25 @@ class Admin extends CI_Controller
 	{
 		$queryDataWarga = $this->Warga_model->getDataWarga($id);
 		$datawargaedit = array('editdatawarga' => $queryDataWarga);
-		$data['title'] = 'Menu Data Warga';
+		$data['title'] = 'Menu Edit Data Warga';
 		$data['user'] = $this->db->get_where('user', ['nik' => $this->session->userdata('nik')])->row_array();
 		$this->load->view('dashboard/layout/header', $data);
 		$this->load->view('dashboard/layout/sidebar');
 		$this->load->view('dashboard/menu/edit_datawarga', $datawargaedit);
 		$this->load->view('dashboard/layout/footer');
+	}
+
+	public function edit_data_penduduk($id)
+	{
+		$queryDataWarga = $this->Warga_model->getDataPenduduk($id);
+		$datawargaedit = array('editdatawarga' => $queryDataWarga);
+		// $data['title'] = 'Menu Edit Data Warga';
+		// $data['user'] = $this->db->get_where('user', ['nik' => $this->session->userdata('nik')])->row_array();
+		// $this->load->view('dashboard/layout/header', $data);
+		// $this->load->view('dashboard/layout/sidebar');
+		// $this->load->view('dashboard/menu/edit_data_penduduk', $datawargaedit);
+		// $this->load->view('dashboard/layout/footer');
+		var_dump($datawargaedit['editdatawarga']);
 	}
 
 	public function tambah_data_warga()
@@ -162,6 +175,41 @@ class Admin extends CI_Controller
 			Data berhasil diubah.
 		  </div>');
 		redirect('admin/data_warga');
+	}
+
+	public function edit_data_p()
+	{
+		$nik = $this->input->post('nik');
+		$nama = $this->input->post('nama');
+		$nok = $this->input->post('no_kk');
+		$ttl = $this->input->post('ttl');
+		$agama = $this->input->post('agama');
+		$pekerjaan = $this->input->post('pekerjaan');
+		$kelamin = $this->input->post('kelamin');
+		$sn = $this->input->post('status_nikah');
+		$alamat = $this->input->post('alamat');
+		$photo = $this->input->post('photo');
+		
+
+		$arrEditData = array(
+			'nik' => $nik,
+			'nama' => $nama,
+			'no_kk' => $nok,
+			'ttl' => $ttl,
+			'agama' => $agama,
+			'pekerjaan' => $pekerjaan,
+			'kelamin' => $kelamin,
+			'status_nikah' => $sn,
+			'alamat' => $alamat,
+			'photo' => $photo,
+		);
+
+		$this->Warga_model->editDataWargaP($nik, $arrEditData);
+		$this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+			Data berhasil diubah.
+		  </div>');
+		redirect('admin/data_warga_all');
+		// var_dump($arrEditData);
 	}
 
 	public function delete_data_warga($nik)
@@ -345,6 +393,20 @@ class Admin extends CI_Controller
 		$this->load->view('dashboard/layout/header', $data);
 		$this->load->view('dashboard/layout/sidebar');
 		$this->load->view('dashboard/menu/acc', $da);
+		$this->load->view('dashboard/layout/footer');
+		// var_dump($data_berkas);
+	}
+
+	public function tampil_data_warga()
+	{
+		$cek = $this->uri->segment('3');
+		$data_berkas = $this->Berkas_model->data_berkas3($cek);
+		$da = array('berkas' => $data_berkas);
+		$data['title'] = 'Lihat Berkas Warga';
+		$data['user'] = $this->db->get_where('user', ['nik' => $this->session->userdata('nik')])->row_array();
+		$this->load->view('dashboard/layout/header', $data);
+		$this->load->view('dashboard/layout/sidebar');
+		$this->load->view('dashboard/menu/tampil_penduduk', $da);
 		$this->load->view('dashboard/layout/footer');
 		// var_dump($data_berkas);
 	}

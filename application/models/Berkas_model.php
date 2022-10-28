@@ -33,6 +33,19 @@ class Berkas_model extends CI_Model
 		}
 	}
 
+	public function data_berkas3($cek)
+	{
+		$this->db->select('*');
+		$this->db->from('data_penduduk a');
+		$this->db->where('nik', $cek);
+		$query = $this->db->get();
+		if ($query->num_rows() != 0) {
+			return $query->row();
+		} else {
+			return false;
+		}
+	}
+
 	public function update_status($cek,$data)
 	{
 		$this->db->where('id_data', $cek);

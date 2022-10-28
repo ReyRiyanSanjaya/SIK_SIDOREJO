@@ -27,10 +27,23 @@ class Warga_model extends CI_Model
 		return $query->row();
 	}
 
+	public function getDataPenduduk($nik)
+	{
+		$this->db->where('nik', $nik);
+		$query = $this->db->get('data_penduduk');;
+		return $query->row();
+	}
+
 	public function editDataWarga($nik, $arrEditData)
 	{
 		$this->db->where('nik', $nik);
 		$this->db->update('warga', $arrEditData);
+	}
+
+	public function editDataWargaP($nik, $arrEditData)
+	{
+		$this->db->where('nik', $nik);
+		$this->db->update('data_penduduk', $arrEditData);
 	}
 
 	public function deleteDataWarga($where)
