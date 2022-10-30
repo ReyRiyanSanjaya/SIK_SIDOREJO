@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Home extends CI_Controller
 {
 
-	public function __construct() 
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('Warga_model');
@@ -90,20 +90,21 @@ class Home extends CI_Controller
 		$this->load->view('layout/footer');
 	}
 
-	public function cek_penerima() {
+	public function cek_penerima()
+	{
 		$nik = $this->input->post('nik');
 		$nama = $this->input->post('nama');
 
 		// query cek data berkas
 		$cd =  $nik;
 		$finalc = $this->Warga_model->cek_data($cd);
-		
+
 		$status = $finalc[0]['status_berkas'];
 		$c_nama = $finalc[0]['nama'];
 
 		$this->load->view('layout/header');
 		// echo $status;
-		if($status == "Sudah dilengkapi" && $nama == $c_nama) {
+		if ($status == "Sudah dilengkapi" && $nama == $c_nama) {
 			redirect('home/sudah_dilengkapi');
 		} elseif ($status == "berhak" && $nama == $c_nama) {
 			redirect('home/selamat');
@@ -111,15 +112,40 @@ class Home extends CI_Controller
 			redirect('home/ditolak');
 		} elseif ($status == "belum dilengkapi" && $nama == $c_nama) {
 			redirect('home/b_lengkap');
-		}
-		else {
+		} else {
 			$this->load->view('tidak_ada');
 		}
-		
+
 		$this->load->view('layout/footer');
 	}
 
-	public function tes() {
+	public function cek_data()
+	{
+		$nik = $this->input->post('nik');
+		$nok = $this->input->post('no_kk');
+
+		// query cek data berkas
+		$finalc = $this->Warga_model->cek_data_p($nik, $nok);
+		$data = array('datap' => $finalc);
+
+		$status = $finalc[0]['nik'];
+
+
+		$this->load->view('layout/header');
+
+		// echo $status;
+		if ($status == $nik) {
+			$this->load->view('cek_data', $data);
+			// var_dump($data);
+		} else {
+			$this->load->view('tidak_ada');
+		}
+
+		$this->load->view('layout/footer');
+	}
+
+	public function tes()
+	{
 		echo $this->session->userdata();
 	}
 }

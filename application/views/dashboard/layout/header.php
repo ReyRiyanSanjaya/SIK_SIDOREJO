@@ -49,7 +49,7 @@
 		<div class="app-header">
 			<div class="app-header-left">
 				<span class="app-icon"></span>
-				<a class="app-name" href="<?php echo base_url('home'); ?>" style="text-decoration: none;">BANSOS UMA</a>
+				<a class="app-name" href="<?php echo base_url('home'); ?>" style="text-decoration: none;">ASIK SIDOREJO</a>
 				<div class="search-wrapper">
 					<!-- pencarian  -->
 					<input class="search-input" type="text" placeholder="Cari Data">

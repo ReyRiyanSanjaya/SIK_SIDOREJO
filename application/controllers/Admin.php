@@ -70,13 +70,13 @@ class Admin extends CI_Controller
 	{
 		$queryDataWarga = $this->Warga_model->getDataPenduduk($id);
 		$datawargaedit = array('editdatawarga' => $queryDataWarga);
-		// $data['title'] = 'Menu Edit Data Warga';
-		// $data['user'] = $this->db->get_where('user', ['nik' => $this->session->userdata('nik')])->row_array();
-		// $this->load->view('dashboard/layout/header', $data);
-		// $this->load->view('dashboard/layout/sidebar');
-		// $this->load->view('dashboard/menu/edit_data_penduduk', $datawargaedit);
-		// $this->load->view('dashboard/layout/footer');
-		var_dump($datawargaedit['editdatawarga']);
+		$data['title'] = 'Menu Edit Data Penduduk';
+		$data['user'] = $this->db->get_where('user', ['nik' => $this->session->userdata('nik')])->row_array();
+		$this->load->view('dashboard/layout/header', $data);
+		$this->load->view('dashboard/layout/sidebar');
+		$this->load->view('dashboard/menu/edit_data_penduduk', $datawargaedit);
+		$this->load->view('dashboard/layout/footer');
+		// var_dump($datawargaedit['editdatawarga']);
 	}
 
 	public function tambah_data_warga()
@@ -162,15 +162,17 @@ class Admin extends CI_Controller
 
 	public function edit_data()
 	{
+		$id = $this->input->post('id');
 		$nik = $this->input->post('nik');
 		$nama = $this->input->post('nama');
 
 		$arrEditData = array(
+			'id_warga' => $id,
 			'nik' => $nik,
 			'nama' => $nama,
 		);
 
-		$this->Warga_model->editDataWarga($nik, $arrEditData);
+		$this->Warga_model->editDataWarga($id, $arrEditData);
 		$this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
 			Data berhasil diubah.
 		  </div>');
@@ -179,6 +181,8 @@ class Admin extends CI_Controller
 
 	public function edit_data_p()
 	{
+		// $cek = $this->uri->segment('3');
+		$id = $this->input->post('id');
 		$nik = $this->input->post('nik');
 		$nama = $this->input->post('nama');
 		$nok = $this->input->post('no_kk');
@@ -192,24 +196,25 @@ class Admin extends CI_Controller
 		
 
 		$arrEditData = array(
+			'id' => $id,
 			'nik' => $nik,
 			'nama' => $nama,
 			'no_kk' => $nok,
 			'ttl' => $ttl,
+			'alamat' => $alamat,
 			'agama' => $agama,
-			'pekerjaan' => $pekerjaan,
 			'kelamin' => $kelamin,
 			'status_nikah' => $sn,
-			'alamat' => $alamat,
+			'pekerjaan' => $pekerjaan,
 			'photo' => $photo,
 		);
 
-		$this->Warga_model->editDataWargaP($nik, $arrEditData);
+		$this->Warga_model->editDataWargaP($id, $arrEditData);
 		$this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
 			Data berhasil diubah.
 		  </div>');
 		redirect('admin/data_warga_all');
-		// var_dump($arrEditData);
+		// var_dump($cek);
 	}
 
 	public function delete_data_warga($nik)

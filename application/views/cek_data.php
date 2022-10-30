@@ -8,7 +8,7 @@
 	}
 
 	#splash {
-		background: #cc1f2f;
+		background: #6d99a2;
 		background-repeat: repeat-y;
 		position: fixed;
 		left: 0;
@@ -83,38 +83,91 @@
 
 		50% {
 			transform: translate(0%, 0%);
+			opacity: 1;
 		}
 
 		100% {
 			transform: translate(0%, -100%);
+			opacity: 0.5;
 		}
 	}
 </style>
 
 
-<section class="pt-6 pt-md-11 pb-10 pb-md-12">
+<section class="pt-6 pt-md-11 pb-10 pb-md-12 bg-light">
 	<div class="page">
-		<div class="container-lg">
+		<div class="container-lg bg-white rounded">
 			<div class="row justify-content-center">
 				<div class="col-md-10 col-lg-8">
 
 					<!-- Heading -->
 					<h1 class="display-3 text-center mb-4 mt-6 text-primary-light " style="text-align: center !important;">
-						SILAHKKAN LENGKAPI DATA ANDA TERLEBIH DAHULU!
+						<?php echo $datap[0]['nama'] ?>
+						
 					</h1>
+					<hr class="hr-sm bg-primary mt-6 mb-6 mx-auto">
+					<br>
 
-					<iframe style="margin-left:30%;" src="https://embed.lottiefiles.com/animation/97680"></iframe>
+					<div class="row">
+						<!-- Text -->
+						<div class="col-md-6">
+							<div class="form-group" style="margin: 0px !important;">
+								<label for="input">Nomor Induk Pendudukan :</label>
+								<br>
+								<p class="badge bg-primary-soft h6 text-uppercase"><?php echo $datap[0]['nik'] ?></p>
+							</div>
+
+							<div class="form-group" style="margin: 0px !important;">
+								<label for="input">Tempat dan Tanggal Lahir :</label>
+								<br>
+								<p class="badge bg-primary-soft h6 text-uppercase"><?php echo $datap[0]['ttl'] ?></p>
+							</div>
+
+							<div class="form-group" style="margin: 0px !important;">
+								<label for="input">Jenis Kelamin :</label>
+								<br>
+								<p class="badge bg-primary-soft h6 text-uppercase"><?php echo $datap[0]['kelamin'] ?></p>
+							</div>
+
+							<div class="form-group" style="margin: 0px !important;">
+								<label for="input">Agama :</label>
+								<br>
+								<p class="badge bg-primary-soft h6 text-uppercase"><?php echo $datap[0]['agama'] ?></p>
+							</div>
+
+							<div class="form-group" style="margin: 0px !important;">
+								<label for="input">Status Perkawinan :</label>
+								<br>
+								<p class="badge bg-primary-soft h6 text-uppercase"><?php echo $datap[0]['status_nikah'] ?></p>
+							</div>
+
+							<div class="form-group" style="margin: 0px !important;">
+								<label for="input">Pekerjaan :</label>
+								<br>
+								<p class="badge bg-primary-soft h6 text-uppercase"><?php echo $datap[0]['pekerjaan'] ?></p>
+							</div>
+							<div class="form-group" style="margin: 0px !important;">
+								<label for="input">Alamat :</label>
+								<br>
+								<p class="badge bg-primary-soft h6 text-uppercase"><?php echo $datap[0]['alamat'] ?></p>
+							</div>
+						</div>
+
+
+						<div class="col-md-6 ml-lg-4">
+							<div class="img">
+								<img src="<?php echo base_url('berkas/penduduk/') . $datap[0]['photo'] ?>" alt="..." class="avatar-img rounded">
+							</div>
+							<p></p>
+						</div>
+					</div>
+
+					<iframe style="margin-left:-50%; margin-top: 50%; width:600px; height: 600px; position:absolute; top:0;" src="https://embed.lottiefiles.com/animation/87317"></iframe>
+
+						<iframe src="https://embed.lottiefiles.com/animation/112545" style="margin-left:75%; margin-top: 50%; width:500px; height: 600px; position:absolute; top:0; opacity: 0.2"></iframe>
+
 					<!-- Divider -->
 					<hr class="hr-sm bg-primary mt-6 mb-6 mx-auto">
-					<!-- Text -->
-					<p class="text-center text-muted">
-						Mohon dilengkapi data anda terlebih dahulu, agar anda bisa menjadi calon penerima BANSOS
-					</p>
-					<a href="http://localhost/kelurahan/auth/login">
-						<div class="alert alert-dark text-center mt-6" role="alert">
-							Lengkapi data anda
-						</div>
-					</a>
 
 				</div>
 			</div>

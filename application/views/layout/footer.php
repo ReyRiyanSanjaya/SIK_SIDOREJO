@@ -6,12 +6,12 @@
 
 				<!-- Brand -->
 				<h2 class="font-serif text-white mb-1">
-					Bansos SIDOREJO
+					ASIK SIDOREJO
 				</h2>
 
 				<!-- Text -->
 				<p class="text-white-60">
-					Program Bantuan Sosial Pemerintah 2021, yang diselenggarakan diseluruh indonesia <strong>BANSOS ANTI KORUPSI lae</strong>
+					Sistem Informasi Kependudukan Kelurahan Sidorejo Kecamatan Medan Tembung</strong>
 				</p>
 
 			</div>
@@ -99,7 +99,7 @@
 
 <!-- Theme JS -->
 <script src="<?php echo base_url('assets/js/theme.bundle.js'); ?>"></script>
-<script src="<?php echo base_url('asset/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+<script src="<?php echo base_url('asset/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
 </body>
 

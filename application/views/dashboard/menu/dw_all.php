@@ -229,8 +229,8 @@
 										?>
 
 											<tr>
-												<td><a href="<?php echo base_url('/admin/tampil_data_warga') ?>/<?php echo $row->nik ?>" target="_blank" rel="noopener noreferrer">
-														<?php echo $row->nik ?>p
+												<td><a href="<?php echo base_url('/admin/tampil_data_warga') ?>/<?php echo $row->nik ?>" rel="noopener noreferrer">
+														<?php echo $row->nik ?>
 													</a></td>
 												<td><?php echo $row->no_kk ?></td>
 												<td><?php echo $row->nama ?></td>

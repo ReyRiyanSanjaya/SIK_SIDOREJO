@@ -8,10 +8,12 @@
 	</div>
 
 
-	<form action="<?php echo base_url('admin/edit_data') ?>" method="post" class="overflow-auto">
+	<form enctype="multipart/form-data" action="<?php echo base_url('admin/edit_data') ?>" method="post" class="overflow-auto">
+		<div class="form-floating mb-3" mt-3>
+			<input name="id" class="form-control" placeholder="Password" type="hidden" value="<?php echo $editdatawarga->id_warga; ?>">
+		</div>
 		<label>Masukan Nik</label>
 		<div class="form-floating mb-3" mt-3>
-			
 			<input name="nik" class="form-control" placeholder="name@example.com">
 			<label for="floatingInput"><?php echo $editdatawarga->nik; ?></label>
 		</div>

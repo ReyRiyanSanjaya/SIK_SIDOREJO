@@ -34,15 +34,15 @@ class Warga_model extends CI_Model
 		return $query->row();
 	}
 
-	public function editDataWarga($nik, $arrEditData)
+	public function editDataWarga($id, $arrEditData)
 	{
-		$this->db->where('nik', $nik);
+		$this->db->where('id_warga', $id);
 		$this->db->update('warga', $arrEditData);
 	}
 
-	public function editDataWargaP($nik, $arrEditData)
+	public function editDataWargaP($id, $arrEditData)
 	{
-		$this->db->where('nik', $nik);
+		$this->db->where('id', $id);
 		$this->db->update('data_penduduk', $arrEditData);
 	}
 
@@ -78,6 +78,24 @@ class Warga_model extends CI_Model
 		$this->db->join('warga b', 'b.nik=a.nik', 'right');
 		$this->db->join('data_warga c', 'c.id_warga=b.id_warga', 'right');
 		$this->db->where('a.nik',$c);       
+		$query = $this->db->get(); 
+		if($query->num_rows() != 0)
+		{
+			return $query->result_array();
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	// cek berkas 
+	public function cek_data_p($nik,$nok)
+	{
+		$this->db->select('*');
+		$this->db->from('data_penduduk');
+		$this->db->where('nik',$nik);
+		$this->db->where('no_kk',$nok);         
 		$query = $this->db->get(); 
 		if($query->num_rows() != 0)
 		{
