@@ -34,7 +34,7 @@
 		</button>
 	</div>
 </div>
-<div class="custom-pencarian" data-aos="fade-in" data-aos-delay="250">
+<div class="custom-pencarian" id="custom-pencarian" data-aos="fade-in" data-aos-delay="250">
 	<div class="container-fluid ">
 		<h2>Cek Data Anda disini</h2>
 		<p>Silahkan masukan NIK KTP dan No KK anda untuk melihat detail data anda

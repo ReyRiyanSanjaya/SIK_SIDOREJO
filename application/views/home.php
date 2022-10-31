@@ -36,7 +36,7 @@
         </button>
     </div>
 </div>
-<div class="custom-pencarian" data-aos="fade-in" data-aos-delay="250">
+<div class="custom-pencarian" id="custom-pencarian" data-aos="fade-in" data-aos-delay="250">
     <div class="container-fluid ">
         <h2>Cek Status Pendaftaran</h2>
         <p>Silahkan cek status pendaftaran pengajuan penerima bantuan sosial disini dengan memasukan nama dan NIK anda

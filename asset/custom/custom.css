@@ -10,7 +10,7 @@
                 bottom: 8rem !important;
             }
             
-            .intro body>div.custom-pencarian {
+            #custom-pencarian {
                 position: relative;
                 top: -80px;
                 height: auto;
